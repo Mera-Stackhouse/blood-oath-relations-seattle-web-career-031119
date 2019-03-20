@@ -12,8 +12,25 @@ end
 a = Cult.new("Scientology", "LA", 1969, "We are bad")
 b = Cult.new("vegans", "Berlin", 1700, "fish are friends")
 
+puts "----------------- Cult instances ---------------"
+p Cult.all
+
 x = Follower.new("mera", 27, "hello")
 y = Follower.new("rayna", 24, "goodbye")
+
+puts "----------------- Follower instances ---------------"
+p Follower.all
+
+BloodOath.new(x, a, "2005-06-02")
+BloodOath.new(y, a, "2010-05-08")
+
+puts "----------------- BloodOath instances ---------------"
+p BloodOath.all
+
+a.recruit_follower(x)
+y.join_cult(x)
+
+
 
 
 binding.pry
